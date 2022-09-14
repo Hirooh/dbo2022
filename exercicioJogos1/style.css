@@ -1,0 +1,45 @@
+body{
+    background-color: #000000
+}
+
+.fundo{
+    position: absolute;
+    left: 200px;
+    width: 800px;
+    height: 500px;
+    background-image: url("./img/kid-a.jpg");
+    background-size: cover;
+    background-color: #270050ce;
+    text-align: center;
+}
+
+.painel{
+    position: absolute;
+    font-size: small;
+    font-family: 'Times New Roman', Times, serif;
+    top: 480px; 
+    left: 500px; 
+    text-align: center;
+}  
+
+#div2{
+    position: absolute; 
+    top: 10px; 
+    left: 15px; 
+    width: 100px; 
+    height: 100px; 
+    background-image: url("./img/itch.png");
+    background-size: 100px 100px;
+    text-align: center;
+}
+
+#div1{
+    position: absolute;
+    top: 200px;
+    left: 70px; 
+    width: 100px; 
+    height: 100px; 
+    background-image: url("./img/moonshaped.png");
+    background-size: 100px 100px;
+    text-align: center;
+}
