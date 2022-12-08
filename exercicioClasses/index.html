@@ -1,0 +1,224 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <title>Exercícios JS - Classes e objetos</title>
+
+    <style>
+
+        *{
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        h2{
+            font-weight: bolder;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+        }
+
+        hr{
+            border-top: 1px dashed black;
+        }
+
+    </style>
+
+</head>
+
+<body>
+    <div class="container">
+        <h2>Dados da turma:</h2>
+        <div id="dados"></div>
+    </div>
+
+    <script defer>
+
+        class pessoa{
+            #nome;
+            #cpf;
+            constructor(nome,cpf){
+                this.setNome(nome);
+                this.setCpf(cpf);
+            }
+
+            setNome(nome){
+                this.#nome = nome;
+            }
+            getNome(){
+                return this.#nome;
+            }
+            setCpf(cpf){
+                this.#cpf=cpf;
+            }
+            getCpf(){
+                return this.#cpf
+            }
+        }
+        
+        class professor extends pessoa{
+            #area;
+            #tel;
+            constructor(nome,cpf,area,tel){
+                super(nome,cpf);
+                this.setArea(area);
+                this.setTel(tel);
+            }
+
+            setArea(area){
+                this.#area=area
+            }
+            getArea(){
+                return this.#area;
+            }
+            setTel(tel){
+                this.#tel=tel;
+            }
+            getTel(){
+                return this.#tel;
+            }
+        }
+    
+        class alunos extends pessoa{
+            #matricula;
+            constructor(nome,cpf,matricula){
+                super(nome,cpf);
+                this.setMatricula(matricula);
+            }
+
+            setMatricula(matricula){
+                this.#matricula = matricula;
+            }
+            getMatricula(){
+                return this.#matricula;
+            }
+        }
+    
+        class turma{
+            #professor;
+            #alunos;
+            #id;
+            constructor(professor,alunos,id){
+                this.setProfessor(professor);
+                this.setAlunos(alunos);
+                this.setId(id);
+                this.imprimeTurma();
+            }
+    
+            setProfessor(professor){
+                this.#professor=professor;
+            }
+            getProfessor(){
+                return this.#professor
+            }
+            setAlunos(alunos){
+                this.#alunos=alunos;
+            }
+            getAlunos(){
+                return this.#alunos
+            }
+            setId(id){
+                this.#id=id;
+            }
+            getId(){
+                return this.#id
+            }
+    
+            imprimeTurma(){
+                professor = this.getProfessor();
+                alunos = this.getAlunos();
+
+                let dados = document.querySelector("#dados");
+
+                let linhanova = document.createElement("hr");
+                dados.appendChild(linhanova);
+
+                let nodoTurma = document.createTextNode("Turma: "+this.getId());
+                dados.appendChild(nodoTurma);
+
+                linhanova = document.createElement("hr");
+                dados.appendChild(linhanova);
+
+                let nodoPNome = document.createTextNode("Professor(a): "+professor.getNome());
+                dados.appendChild(nodoPNome);
+
+                linhanova = document.createElement("br");
+                dados.appendChild(linhanova);
+
+                let nodoPCpf = document.createTextNode("CPF do(a) Professor(a): "+professor.getCpf());
+                dados.appendChild(nodoPCpf);
+
+                linhanova = document.createElement("br");
+                dados.appendChild(linhanova);
+
+                let nodoPArea = document.createTextNode("Área do(a) Professor(a): "+professor.getArea());
+                dados.appendChild(nodoPArea);
+
+                linhanova = document.createElement("br");
+                dados.appendChild(linhanova);
+
+                let nodoPTel = document.createTextNode("Telefone do(a) Professor(a): "+professor.getTel());
+                dados.appendChild(nodoPTel);
+
+                let nl = document.createElement("hr");
+                dados.appendChild(nl);
+
+                alunos.forEach(aluno=>this.imprimeAluno(aluno)); 
+            }
+
+            imprimeAluno(aluno){
+                let nodoANome = document.createTextNode("Nome do(a) Aluno(a): "+aluno.getNome());
+                dados.appendChild(nodoANome);
+
+                let linhanova = document.createElement("br");
+                dados.appendChild(linhanova);
+
+                let nodoACpf = document.createTextNode("CPF do(a) Aluno(a): "+aluno.getCpf());
+                dados.appendChild(nodoACpf);
+
+                linhanova = document.createElement("br");
+                dados.appendChild(linhanova);
+
+                let nodoAMatricula = document.createTextNode("Matrícula do(a) Aluno(a): "+aluno.getMatricula());
+                dados.appendChild(nodoAMatricula);
+
+                linhanova = document.createElement("br");
+                dados.appendChild(linhanova);
+
+                linhanova = document.createElement("br");
+                dados.appendChild(linhanova);
+            }
+        }
+        
+        let p1 = new professor("Telecken", "614.544.230-13", "DBO", "+5553981653487");
+        let p2 = new professor("Raquel", "359.170.360-55", "Lógica de Programação", "+5553991320475");
+        let a1 = new alunos(" Gabriela", "842.201.060-73", "11030332");
+        let a2 = new alunos(" Juan", "559.006.510-02", "11030375");
+        let a3 = new alunos(" Murillo", "196.084.340-09", "11030302");
+        let a4 = new alunos(" Miguel", "813.374.860-78", "11030399");
+        let a5 = new alunos(" Sarah", "496.034.970-02", "11030387");
+        let a6 = new alunos(" Théo", "002.441.730-01", "11030300");
+        
+        let turma1 = [];
+        turma1.push(a1);
+        turma1.push(a2);
+        turma1.push(a3);
+        turma1.push(a4);
+        
+        let t1 = new turma(p1, turma1, "2C");
+        
+        let turma2 = [];
+        turma2.push(a3);
+        turma2.push(a4);
+        turma2.push(a5);
+        turma2.push(a6);
+        
+        let t2 = new turma(p2, turma2, "3C");
+
+    </script>
+
+</body>
+
+</html>
