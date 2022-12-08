@@ -1,0 +1,50 @@
+*{
+    margin: auto;
+    padding: 0;
+}
+
+.body{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.jogo{
+     position: relative;
+     width: 500px;
+     height: 500px;
+     background-color: lightblue;
+}
+
+.chao{
+    width: 100%;
+    height: 15px;
+    background-color: black;
+    position: absolute;
+    bottom: 0;
+}
+
+#coletor{
+    width: 80px;
+    height: 50px;
+    background-color: green;
+    position: absolute;
+    bottom: 15px;
+    left: calc(50% - 25px);
+}
+
+.item{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: yellow;
+}
+
+.painel{
+    position: absolute;
+     top: 42vw; 
+     left:10vw; 
+     text-align: center;
+}  
