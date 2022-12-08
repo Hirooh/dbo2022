@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Exercício 1 da Aula 2</title>
+    <link rel="icon" type="image/x-icon" href="./img/adeusaurora.jpg">
+
+    <style>
+        table, th, td {
+            border: 1px solid #000000;
+            border-collapse: collapse;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <header></header>
+    <nav></nav>
+
+    <main>
+
+        <h1>
+            Título
+        </h1>
+
+        <p>
+            <i>Texto em itálico</i> e <b>texto em negrito</b>
+        </p>
+
+        <ul>
+            <li> Frutas
+
+                <ol>
+                    <li>Banana</li>
+                    <li>Maça</li>
+                    <li>Abacate</li>
+                </ol>
+
+            </li>
+
+            <li> Vegetais
+
+                <ol type = "I">
+                    <li>Cebola</li>
+                    <li>Pimentão
+                    <ol type = "a">
+                        <li>Verde</li>
+                        <li>Vermelho</li>
+                        <li>Amarelo</li>
+                    </ol>
+                    </li>
+                    <li>Tomate</li>
+                </ol>
+
+            </li>
+        </ul>
+
+        <table>
+        
+            <caption>Lucro por Mês</caption>
+        
+            <thead>
+                <tr>
+                    <th>Mês</th>
+                    <th colspan="2">Frutas</th> 
+                        <tr>
+                            <th></th>
+                            <th>Banana</th>
+                            <th>Maça</th>
+                        </tr>
+            </thead>
+        
+            <tbody>
+                <tr>
+                    <td>Janeiro</td>
+                    <td>100</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>Fevereiro</td>
+                    <td>120</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>Março</td>
+                    <td>120</td>
+                    <td>150</td>
+                </tr>
+            </tbody>
+        
+            <tfoot>
+                <tr>
+                    <td>Total</td>
+                    <td>340</td>
+                    <td>300</td>
+                </tr>
+            </tfoot>
+        
+        </table>
+
+        <br>
+
+        <a href="https://ifrs.edu.br/">
+            <img src="./img/ifrs.png" alt="Logo do IFRS" width="200" height="200"/>
+            <!-- https://www.facebook.com/IFRSOficial/ -->
+        </a>
+
+        <figure>
+                
+        <img src="./img/clubedaesquina.jpg" alt="Capa do álbum Clube da Esquina" width="200" height="200"/>
+        
+        <figcaption>Capa do álbum Clube da Esquina
+        </figcaption>
+        
+        </figure>
+
+        <br>
+
+        <form method="post" action="https://google.com">
+            
+            <fieldset style="width: 0">
+
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" placeholder="Digite seu nome"><br><br>
+
+                <label for="data">Data:</label>
+                <input type="date" id="data" name="data"><br><br>
+
+                <label for="cor">Cor:</label>
+                <input type="color" id="cor" name="cor">
+
+            </fieldset>
+
+            <fieldset style="width: 0">
+
+                <label for="arquivo">Arquivo:</label>
+                <input type="file" id="arquivo" name="arquivo"><br><br>
+
+                <label for="enviar"></label>
+                <input type="submit" id="enviar" name="enviar" value="Enviar">
+
+            </fieldset>
+        
+        </form>
+        
+        <br>
+
+        <iframe width="435" height="245" src="https://www.youtube.com/embed/5qap5aO4i9A" allowfullscreen>
+        </iframe>
+
+    </main>
+
+    <footer></footer>
+
+</body>
+
+</html>
